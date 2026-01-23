@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurora Notes</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --primary: #38bdf8;
+      --secondary: #a78bfa;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, var(--bg), #020617);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      margin-top: 1rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    section {
+      background: rgba(17, 24, 39, 0.8);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .quote {
+      font-style: italic;
+      text-align: center;
+      color: var(--secondary);
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer span {
+      color: var(--primary);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aurora Notes</h1>
+    <p>A calm, minimal space to collect ideas, learn new things, and build creative projects on the web.</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#thoughts">Thoughts</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About This Site</h2>
+      <p>
+        Aurora Notes is a simple yet modern HTML website designed to show how structure, design,
+        and creativity can work together. It uses only HTML and CSS—no frameworks, no libraries,
+        just clean fundamentals.
+      </p>
+      <p class="quote">"Small ideas, written down, can grow into big things."</p>
+    </section>
+
+    <section id="features">
+      <h2>Core Features</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Responsive Layout</h3>
+          <p>Looks good on desktops, tablets, and mobile devices without extra code.</p>
+        </div>
+        <div class="card">
+          <h3>Modern Design</h3>
+          <p>Uses gradients, cards, and soft shadows for a clean, professional feel.</p>
+        </div>
+        <div class="card">
+          <h3>Beginner Friendly</h3>
+          <p>Easy to read and modify—perfect for learning or school projects.</p>
+        </div>
+        <div class="card">
+          <h3>Single File</h3>
+          <p>Everything is inside one HTML file, so it works great with GitHub Pages.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="thoughts">
+      <h2>Daily Thought</h2>
+      <p>
+        Learning web development isn’t about memorizing everything—it’s about understanding how
+        pieces fit together. Start small, experiment often, and don’t be afraid to break things.
+      </p>
+      <p class="quote">"Progress beats perfection."</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 <span>Aurora Notes</span>. Built with pure HTML & CSS.</p>
+  </footer>
+</body>
+</html>
